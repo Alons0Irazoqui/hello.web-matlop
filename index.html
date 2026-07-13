@@ -855,6 +855,63 @@
     }
 
     /* ============================================================
+       8B. PRECIOS Y SERVICIOS
+    ============================================================ */
+    .pricing { padding:90px 0 100px; background:var(--white); }
+    .pricing-table-wrap {
+        margin-top:20px; overflow-x:auto; border-radius:6px;
+        box-shadow:0 12px 40px rgba(0,0,0,.08);
+    }
+    .pricing-table {
+        width:100%; border-collapse:collapse; min-width:680px;
+        background:var(--white);
+    }
+    .pricing-table thead th {
+        background:var(--dark); color:var(--white);
+        font-size:.7rem; font-weight:700; letter-spacing:.14em;
+        text-transform:uppercase; text-align:left;
+        padding:20px 26px;
+    }
+    .pricing-table thead th:first-child { border-top-left-radius:6px; }
+    .pricing-table thead th:last-child  { border-top-right-radius:6px; }
+    .pricing-table tbody td {
+        padding:22px 26px; font-size:.88rem; color:var(--gray-text);
+        border-bottom:1px solid var(--gray-mid);
+        vertical-align:top; line-height:1.65;
+    }
+    .pricing-table tbody tr:last-child td { border-bottom:none; }
+    .pricing-table tbody tr:nth-child(even) { background:var(--gray-light); }
+    .pricing-table tbody tr { transition:background .3s ease; }
+    .pricing-table tbody tr:hover { background:var(--gold-glow-sm); }
+    .pricing-table tbody td strong { color:var(--dark); font-size:.92rem; font-weight:700; }
+    .price-tag {
+        display:inline-flex; align-items:baseline; gap:5px;
+        font-weight:800; color:var(--gold-dark); font-size:.95rem;
+        white-space:nowrap;
+    }
+    .price-tag small { font-weight:600; font-size:.68rem; color:var(--gray-text); text-transform:lowercase; }
+
+    @media(max-width:768px){
+        .pricing-table-wrap { box-shadow:none; }
+        .pricing-table thead { display:none; }
+        .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table td { display:block; width:100%; }
+        .pricing-table tbody tr {
+            margin-bottom:16px; border:1px solid var(--gray-mid); border-radius:6px;
+            overflow:hidden; background:var(--white) !important;
+            box-shadow:0 4px 16px rgba(0,0,0,.05);
+        }
+        .pricing-table tbody td {
+            border-bottom:1px solid var(--gray-mid); padding:14px 20px;
+        }
+        .pricing-table tbody td:last-child { border-bottom:none; }
+        .pricing-table tbody td::before {
+            content:attr(data-label); display:block;
+            font-size:.62rem; font-weight:700; letter-spacing:.12em;
+            text-transform:uppercase; color:var(--gold-dark); margin-bottom:6px;
+        }
+    }
+
+    /* ============================================================
        SECCIÓN CONTACTO + FORMULARIO + MAPA
     ============================================================ */
     .contact-section {
@@ -1210,6 +1267,7 @@
             <li><a href="#servicios">Materias</a></li>
             <li><a href="#proceso">Metodología</a></li>
             <li><a href="#galeria">Programas</a></li>
+            <li><a href="#precios">Precios</a></li>
             <li><a href="#contacto" class="nav-cta">712 234 9860</a></li>
         </ul>
     </div>
@@ -1570,6 +1628,64 @@
 </section>
 
 <!-- ============================================================
+     PRECIOS Y SERVICIOS
+============================================================ -->
+<section class="pricing" id="precios">
+    <div class="container">
+        <div class="sr" style="text-align:center">
+            <div class="section-tag" style="justify-content:center">Precios y Servicios</div>
+            <h2 class="section-title">Inversión <span class="gold-text">Transparente</span> en tu Formación</h2>
+            <span class="gold-rule"></span>
+            <p class="section-sub">Precios en pesos mexicanos (MXN).</p>
+        </div>
+
+        <div class="pricing-table-wrap sr">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Precio</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Servicio"><strong>Asesoría personalizada y en línea</strong></td>
+                        <td data-label="Precio"><span class="price-tag">$140 MXN <small>/ hora</small></span></td>
+                        <td data-label="Detalles">Matemáticas, Español, Física, Química, Biología e Inglés.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Servicio"><strong>Curso de verano</strong></td>
+                        <td data-label="Precio"><span class="price-tag">$700 MXN <small>/ semana</small></span></td>
+                        <td data-label="Detalles">Lunes a viernes de 9:00 a 13:00 h. Inglés, matemáticas, papiroflexia y manualidades. Preescolar, primaria y secundaria.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Servicio"><strong>Asesoramiento para concursos del conocimiento</strong></td>
+                        <td data-label="Precio"><span class="price-tag">$140 MXN <small>/ hora</small></span></td>
+                        <td data-label="Detalles">—</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Servicio"><strong>Curso de ingreso a la universidad</strong></td>
+                        <td data-label="Precio"><span class="price-tag">$9,800 MXN <small>/ curso</small></span></td>
+                        <td data-label="Detalles">Matemáticas, Español, Química, Física, Biología e Inglés. 8 horas a la semana, 3 días (lunes, miércoles y sábado). Duración: 7 meses.</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Servicio"><strong>Curso de Pre-medicina</strong></td>
+                        <td data-label="Precio"><span class="price-tag">$2,880 MXN <small>(grupal)</small></span></td>
+                        <td data-label="Detalles"></td>
+                    </tr>
+                    <tr>
+                        <td data-label="Servicio"><strong>Terapia psicológica</strong></td>
+                        <td data-label="Precio"><span class="price-tag">$400 MXN</span></td>
+                        <td data-label="Detalles">Atención y acompañamiento profesional. Consulta por agenda. Cupos limitados: 15 alumnos máximo.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
      CONTACTO — Formulario + Info + Mapa
 ============================================================ -->
 <section class="contact-section" id="contacto">
@@ -1757,6 +1873,7 @@
                     <li><a href="#servicios">Materias</a></li>
                     <li><a href="#proceso">Metodología</a></li>
                     <li><a href="#galeria">Programas</a></li>
+                    <li><a href="#precios">Precios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
